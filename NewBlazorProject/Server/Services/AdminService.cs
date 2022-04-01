@@ -159,7 +159,41 @@ namespace NewBlazorProject.Server.Services
             }
         }
 
-        public Task<MD_Address> GetAddressById(int Id)
+        public async Task<MD_Address?> GetAddressById(int? Id)
+        {
+            return await _context.MD_Addresses.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+        public async Task<MD_CreatedBy?> GetCreatedById(int? Id)
+        {
+            return await _context.MD_CreatedBy.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+        public async Task<MD_Directory?> GetDirectoryById(int? Id)
+        {
+            return await _context.MD_Directories.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+        public async Task<MD_EducationLevel?> GetEducationLevelById(int? Id)
+        {
+            return await _context.MD_EducationLevels.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+        public async Task<MD_Education?> GetEductaionBy(int? Id)
+        {
+            return await _context.MD_Educations.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+        public async Task<MD_Gender?> GetGenderById(int? Id)
+        {
+            return await _context.MD_Genders.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+        public async Task<MD_UpdatedBy?> GetUpdatedById(int? Id)
+        {
+            return await _context.MD_UpdatedBys.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+        public Task<MD_UploadFile> GetUploadFileById(int Id)
         {
             throw new NotImplementedException();
         }
@@ -204,40 +238,7 @@ namespace NewBlazorProject.Server.Services
             throw new NotImplementedException();
         }
 
-        public Task<MD_CreatedBy> GetCreatedById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MD_Directory> GetDirectoryById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MD_EducationLevel> GetEducationLevelById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MD_Education> GetEductaionBy(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MD_Gender> GetGenderById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MD_UpdatedBy> GetUpdatedById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<MD_UploadFile> GetUploadFileById(int Id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public void UpdateAddress(MD_Address mD_Address)
         {
