@@ -24,14 +24,14 @@ namespace NewBlazorProject.Server.InterFaces
         Task<IEnumerable<MD_EducationLevel>> GetAllEducationLevel();
 
 
-        Task<MD_Address> GetAddressById(int Id);
-        Task<MD_CreatedBy> GetCreatedById(int Id);
-        Task<MD_Directory> GetDirectoryById(int Id);
-        Task<MD_Education> GetEductaionBy(int Id);
-        Task<MD_UploadFile> GetUploadFileById(int Id);
-        Task<MD_UpdatedBy> GetUpdatedById(int Id);
-        Task<MD_Gender> GetGenderById(int Id);
-        Task<MD_EducationLevel> GetEducationLevelById(int Id);
+        Task<MD_Address?> GetAddressById(int Id);
+        Task<MD_CreatedBy?> GetCreatedById(int Id);
+        Task<MD_Directory?> GetDirectoryById(int Id);
+        Task<MD_Education?> GetEductaionBy(int Id);
+        Task<MD_UploadFile?> GetUploadFileById(int Id);
+        Task<MD_UpdatedBy?> GetUpdatedById(int Id);
+        Task<MD_Gender?> GetGenderById(int Id);
+        Task<MD_EducationLevel?> GetEducationLevelById(int Id);
 
 
 

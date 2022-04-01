@@ -105,7 +105,7 @@ namespace NewBlazorProject.Server.Services
             return await _context.hR_Postings.ToListAsync();
         }
 
-        public async Task<HR_Catagory> GetHR_CatagoryById(int CatagoryId)
+        public async Task<HR_Catagory?> GetHR_CatagoryById(int CatagoryId)
         {
             return await _context.hR_Catagorys.FirstOrDefaultAsync(e => e.Id == CatagoryId);
         }

@@ -159,83 +159,83 @@ namespace NewBlazorProject.Server.Services
             }
         }
 
-        public async Task<MD_Address?> GetAddressById(int? Id)
+        public async Task<MD_Address> GetAddressById(int Id)
         {
             return await _context.MD_Addresses.FirstOrDefaultAsync(e => e.Id == Id);
         }
-        public async Task<MD_CreatedBy?> GetCreatedById(int? Id)
+        public async Task<MD_CreatedBy> GetCreatedById(int Id)
         {
             return await _context.MD_CreatedBy.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public async Task<MD_Directory?> GetDirectoryById(int? Id)
+        public async Task<MD_Directory> GetDirectoryById(int Id)
         {
             return await _context.MD_Directories.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public async Task<MD_EducationLevel?> GetEducationLevelById(int? Id)
+        public async Task<MD_EducationLevel> GetEducationLevelById(int Id)
         {
             return await _context.MD_EducationLevels.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public async Task<MD_Education?> GetEductaionBy(int? Id)
+        public async Task<MD_Education> GetEductaionBy(int Id)
         {
             return await _context.MD_Educations.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public async Task<MD_Gender?> GetGenderById(int? Id)
+        public async Task<MD_Gender> GetGenderById(int Id)
         {
             return await _context.MD_Genders.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public async Task<MD_UpdatedBy?> GetUpdatedById(int? Id)
+        public async Task<MD_UpdatedBy> GetUpdatedById(int Id)
         {
             return await _context.MD_UpdatedBys.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public Task<MD_UploadFile> GetUploadFileById(int Id)
+        public async Task<MD_UploadFile> GetUploadFileById(int Id)
         {
-            throw new NotImplementedException();
+            return await _context.MD_UploadFiles.FirstOrDefaultAsync(e => e.Id == Id);
         }
 
-        public Task<IEnumerable<MD_Address>> GetAllAddress()
+        public async Task<IEnumerable<MD_Address>> GetAllAddress()
         {
-            throw new NotImplementedException();
+            return await _context.MD_Addresses.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_CreatedBy>> GetAllCreatedBy()
+        public async Task<IEnumerable<MD_CreatedBy>> GetAllCreatedBy()
         {
-            throw new NotImplementedException();
+            return await _context.MD_CreatedBy.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_Directory>> GetAllDirectory()
+        public async Task<IEnumerable<MD_Directory>> GetAllDirectory()
         {
-            throw new NotImplementedException();
+            return await _context.MD_Directories.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_Education>> GetAllEducation()
+        public async Task<IEnumerable<MD_Education>> GetAllEducation()
         {
-            throw new NotImplementedException();
+            return await _context.MD_Educations.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_EducationLevel>> GetAllEducationLevel()
+        public async Task<IEnumerable<MD_EducationLevel>> GetAllEducationLevel()
         {
-            throw new NotImplementedException();
+            return await _context.MD_EducationLevels.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_Gender>> GetAllGender()
+        public async Task<IEnumerable<MD_Gender>> GetAllGender()
         {
-            throw new NotImplementedException();
+            return await _context.MD_Genders.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_UpdatedBy>> GetAllUpdatedBy()
+        public async Task<IEnumerable<MD_UpdatedBy>> GetAllUpdatedBy()
         {
-            throw new NotImplementedException();
+            return await _context.MD_UpdatedBys.ToListAsync();
         }
 
-        public Task<IEnumerable<MD_UploadFile>> GetAllUploadFiles()
+        public async Task<IEnumerable<MD_UploadFile>> GetAllUploadFiles()
         {
-            throw new NotImplementedException();
+            return await _context.MD_UploadFiles.ToListAsync();
         }
 
        
