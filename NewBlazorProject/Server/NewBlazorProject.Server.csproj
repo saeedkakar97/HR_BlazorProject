@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>NewBlazorProject.Server-4AF6AAD5-7FA4-41E2-889D-376816E2C5B2</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="InterFaces\Customer Data\**" />
+    <Compile Remove="InterFaces\HR Data\**" />
+    <Compile Remove="InterFaces\MasterData\**" />
+    <Compile Remove="Services\Customer Data\**" />
+    <Compile Remove="Services\HR Data\**" />
+    <Compile Remove="Services\MasterData\**" />
+    <Content Remove="InterFaces\Customer Data\**" />
+    <Content Remove="InterFaces\HR Data\**" />
+    <Content Remove="InterFaces\MasterData\**" />
+    <Content Remove="Services\Customer Data\**" />
+    <Content Remove="Services\HR Data\**" />
+    <Content Remove="Services\MasterData\**" />
+    <EmbeddedResource Remove="InterFaces\Customer Data\**" />
+    <EmbeddedResource Remove="InterFaces\HR Data\**" />
+    <EmbeddedResource Remove="InterFaces\MasterData\**" />
+    <EmbeddedResource Remove="Services\Customer Data\**" />
+    <EmbeddedResource Remove="Services\HR Data\**" />
+    <EmbeddedResource Remove="Services\MasterData\**" />
+    <None Remove="InterFaces\Customer Data\**" />
+    <None Remove="InterFaces\HR Data\**" />
+    <None Remove="InterFaces\MasterData\**" />
+    <None Remove="Services\Customer Data\**" />
+    <None Remove="Services\HR Data\**" />
+    <None Remove="Services\MasterData\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.2" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.16.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\NewBlazorProject.Client.csproj" />
+    <ProjectReference Include="..\Shared\NewBlazorProject.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
