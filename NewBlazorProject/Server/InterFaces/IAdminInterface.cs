@@ -4,7 +4,7 @@ namespace NewBlazorProject.Server.InterFaces
 {
     public interface IAdminInterface
     {
-        // This is admin interfacses
+        // This is admin interfacses added by saeed
         MD_Address AddAddress(MD_Address mD_Address);
         MD_CreatedBy AddCreatedBy(MD_CreatedBy mD_CreatedBy);
         MD_Directory AddDirectory(MD_Directory mD_Directory);
