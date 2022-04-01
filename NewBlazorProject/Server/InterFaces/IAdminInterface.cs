@@ -5,14 +5,14 @@ namespace NewBlazorProject.Server.InterFaces
     public interface IAdminInterface
     {
         // This is admin interfacses added by saeed
-        MD_Address AddAddress(MD_Address mD_Address);
-        MD_CreatedBy AddCreatedBy(MD_CreatedBy mD_CreatedBy);
-        MD_Directory AddDirectory(MD_Directory mD_Directory);
-        MD_Education AddEducation(MD_Education mD_Education);
-        MD_UploadFile AddUploadFile(MD_UploadFile mD_UploadFile);
-        MD_UpdatedBy AddUpdatedBy(MD_UpdatedBy mD_UpdatedBy);
-        MD_Gender AddGender(MD_Gender mD_Gender);
-        MD_EducationLevel AddEducationLevel(MD_EducationLevel mD_EducationLevel);
+        Task<IEnumerable<MD_Address>> AddAddress(MD_Address mD_Address);
+        Task<IEnumerable<MD_CreatedBy>> AddCreatedBy(MD_CreatedBy mD_CreatedBy);
+        Task<IEnumerable<MD_Directory>> AddDirectory(MD_Directory mD_Directory);
+        Task<IEnumerable<MD_Education>> AddEducation(MD_Education mD_Education);
+        Task<IEnumerable<MD_UploadFile>> AddUploadFile(MD_UploadFile mD_UploadFile);
+        Task<IEnumerable<MD_UpdatedBy>> AddUpdatedBy(MD_UpdatedBy mD_UpdatedBy);
+        Task<IEnumerable<MD_Gender>> AddGender(MD_Gender mD_Gender);
+        Task<IEnumerable<MD_EducationLevel>> AddEducationLevel(MD_EducationLevel mD_EducationLevel);
 
         Task<IEnumerable<MD_Address>> GetAllAddress();
         Task<IEnumerable<MD_CreatedBy>> GetAllCreatedBy();
