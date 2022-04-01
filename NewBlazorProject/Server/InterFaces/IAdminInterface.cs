@@ -35,14 +35,15 @@ namespace NewBlazorProject.Server.InterFaces
 
 
 
-        void UpdateAddress(MD_Address mD_Address);
-        void UpdateCreatedBy(MD_CreatedBy mD_CreatedBy);
-        void UpdateDirectoryBy(MD_Directory mD_Directory);
-        void UpdateEducation(MD_Education mD_Education);
-        void UpdateUploadFile(MD_UploadFile mD_UploadFile);
-        void UpdateUpdatedBy(MD_UpdatedBy mD_UpdateUpdatedBy);
-        void UpdateGender(MD_Gender mD_Gender);
-        void UpdateEducationLevel(MD_EducationLevel mD_EducationLevel);
+        Task<MD_Address> UpdateAddress(MD_Address mD_Address);
+        Task<MD_CreatedBy> UpdateCreatedBy(MD_CreatedBy mD_Address);
+        Task<MD_Directory> UpdateDirectoryBy(MD_Directory mD_Address);
+        Task<MD_Education> UpdateEducation(MD_Education mD_Address);
+        Task<MD_UploadFile> UpdateUploadFile(MD_UploadFile mD_Address);
+        Task<MD_UpdatedBy> UpdateUpdatedBy(MD_UpdatedBy mD_Address);
+        Task<MD_Gender> UpdateGender(MD_Gender mD_Address); 
+        Task<MD_EducationLevel> UpdateEducationLevel(MD_EducationLevel mD_Address); 
+        
 
         void DeleteAddress(int Id);
         void DeleteCreatedBy(int Id);

@@ -240,44 +240,112 @@ namespace NewBlazorProject.Server.Services
 
        
 
-        public void UpdateAddress(MD_Address mD_Address)
+        public async Task<MD_Address> UpdateAddress(MD_Address mD_Address)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_Addresses.FirstOrDefaultAsync(e => e.Id == mD_Address.Id);
+            if (result != null)
+            {
+                result.DistrictId = mD_Address.DistrictId;
+                result.TehsilId = mD_Address.TehsilId;
+                await _context.SaveChangesAsync();
+                return result; 
+            }
+            return null;
         }
 
-        public void UpdateCreatedBy(MD_CreatedBy mD_CreatedBy)
+        public async  Task<MD_CreatedBy> UpdateCreatedBy(MD_CreatedBy mD_CreatedBy)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_CreatedBy.FirstOrDefaultAsync(e => e.Id == mD_CreatedBy.Id);
+            if (result != null)
+            {
+                result.Name = mD_CreatedBy.Name;
+                result.date = mD_CreatedBy.date;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
-        public void UpdateDirectoryBy(MD_Directory mD_Directory)
+        public async Task<MD_Directory> UpdateDirectoryBy(MD_Directory mD_Directory)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_Directories.FirstOrDefaultAsync(e => e.Id == mD_Directory.Id);
+            if (result != null)
+            {
+                result.FolderName = mD_Directory.FolderName;
+                result.MD_UploadFiles = mD_Directory.MD_UploadFiles;
+                result.SubFolderName = mD_Directory.SubFolderName;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
-        public void UpdateEducation(MD_Education mD_Education)
+        public async Task<MD_Education> UpdateEducation(MD_Education mD_Education)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_Educations.FirstOrDefaultAsync(e => e.Id == mD_Education.Id);
+            if (result != null)
+            {
+                result.TotalMark = mD_Education.TotalMark;
+                result.Percentage = mD_Education.Percentage;
+                result.CGPA = mD_Education.CGPA;
+                result.ObtainMark = mD_Education.ObtainMark;
+                result.SelectLevel = mD_Education.SelectLevel;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
-        public void UpdateEducationLevel(MD_EducationLevel mD_EducationLevel)
+        public async Task<MD_EducationLevel> UpdateEducationLevel(MD_EducationLevel mD_EducationLevel)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_EducationLevels.FirstOrDefaultAsync(e => e.Id == mD_EducationLevel.Id);
+            if (result != null)
+            {
+                result.Name = mD_EducationLevel.Name;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
-        public void UpdateGender(MD_Gender mD_Gender)
+        public async Task<MD_Gender> UpdateGender(MD_Gender mD_Gender)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_Genders.FirstOrDefaultAsync(e => e.Id == mD_Gender.Id);
+            if (result != null)
+            {
+                result.Name = mD_Gender.Name;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
-        public void UpdateUpdatedBy(MD_UpdatedBy mD_UpdateUpdatedBy)
+        public async Task<MD_UpdatedBy> UpdateUpdatedBy(MD_UpdatedBy mD_UpdateUpdatedBy)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_UpdatedBys.FirstOrDefaultAsync(e => e.Id == mD_UpdateUpdatedBy.Id);
+            if (result != null)
+            {
+                result.Name = mD_UpdateUpdatedBy.Name;
+                result.date = mD_UpdateUpdatedBy.date;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
-        public void UpdateUploadFile(MD_UploadFile mD_UploadFile)
+        public async Task<MD_UploadFile> UpdateUploadFile(MD_UploadFile mD_UploadFile)
         {
-            throw new NotImplementedException();
+            var result = await _context.MD_UploadFiles.FirstOrDefaultAsync(e => e.Id == mD_UploadFile.Id);
+            if (result != null)
+            {
+                result.Path = mD_UploadFile.Path;
+                result.MultiplePath = mD_UploadFile.MultiplePath;
+                result.MD_Directory = mD_UploadFile.MD_Directory;
+                result.DirectoryId = mD_UploadFile.DirectoryId;
+                await _context.SaveChangesAsync();
+                return result;
+            }
+            return null;
         }
 
        
