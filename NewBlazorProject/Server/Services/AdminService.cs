@@ -14,6 +14,7 @@ namespace NewBlazorProject.Server.Services
         }
 
         // commit added by saeed
+        // commit added by ali
        async Task<IEnumerable<MD_Address>>  IAdminInterface.AddAddress(MD_Address mD_Address)
         {
             var result = await _context.MD_Addresses.AddAsync(mD_Address);
