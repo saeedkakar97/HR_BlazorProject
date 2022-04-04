@@ -1,4 +1,3 @@
-global using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Duende.IdentityServer.Services;
@@ -32,7 +31,7 @@ builder.Services.AddIdentityServer()
     });
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("role");
 
-builder.Services.AddTransient<IProfileService, ProfileService>();
+//builder.Services.AddTransient<IProfileService, ProfileService>();
 builder.Services.AddScoped<IAdminInterface, AdminService>();
 builder.Services.AddScoped<IHRInterface, HRService>();
 builder.Services.AddScoped<ICustomerInterface, CustomerService>();

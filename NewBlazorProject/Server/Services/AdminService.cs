@@ -13,6 +13,7 @@ namespace NewBlazorProject.Server.Services
             _context = context;
         }
 
+        // commit added by saeed
        async Task<IEnumerable<MD_Address>>  IAdminInterface.AddAddress(MD_Address mD_Address)
         {
             var result = await _context.MD_Addresses.AddAsync(mD_Address);
@@ -240,7 +241,7 @@ namespace NewBlazorProject.Server.Services
 
        
 
-        public async Task<MD_Address> UpdateAddress(MD_Address mD_Address)
+        public async Task<MD_Address?> UpdateAddress(MD_Address mD_Address)
         {
             var result = await _context.MD_Addresses.FirstOrDefaultAsync(e => e.Id == mD_Address.Id);
             if (result != null)
@@ -253,7 +254,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async  Task<MD_CreatedBy> UpdateCreatedBy(MD_CreatedBy mD_CreatedBy)
+        public async  Task<MD_CreatedBy?> UpdateCreatedBy(MD_CreatedBy mD_CreatedBy)
         {
             var result = await _context.MD_CreatedBy.FirstOrDefaultAsync(e => e.Id == mD_CreatedBy.Id);
             if (result != null)
@@ -266,7 +267,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async Task<MD_Directory> UpdateDirectoryBy(MD_Directory mD_Directory)
+        public async Task<MD_Directory?> UpdateDirectoryBy(MD_Directory mD_Directory)
         {
             var result = await _context.MD_Directories.FirstOrDefaultAsync(e => e.Id == mD_Directory.Id);
             if (result != null)
@@ -280,7 +281,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async Task<MD_Education> UpdateEducation(MD_Education mD_Education)
+        public async Task<MD_Education?> UpdateEducation(MD_Education mD_Education)
         {
             var result = await _context.MD_Educations.FirstOrDefaultAsync(e => e.Id == mD_Education.Id);
             if (result != null)
@@ -296,7 +297,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async Task<MD_EducationLevel> UpdateEducationLevel(MD_EducationLevel mD_EducationLevel)
+        public async Task<MD_EducationLevel?> UpdateEducationLevel(MD_EducationLevel mD_EducationLevel)
         {
             var result = await _context.MD_EducationLevels.FirstOrDefaultAsync(e => e.Id == mD_EducationLevel.Id);
             if (result != null)
@@ -308,7 +309,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async Task<MD_Gender> UpdateGender(MD_Gender mD_Gender)
+        public async Task<MD_Gender?> UpdateGender(MD_Gender mD_Gender)
         {
             var result = await _context.MD_Genders.FirstOrDefaultAsync(e => e.Id == mD_Gender.Id);
             if (result != null)
@@ -320,7 +321,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async Task<MD_UpdatedBy> UpdateUpdatedBy(MD_UpdatedBy mD_UpdateUpdatedBy)
+        public async Task<MD_UpdatedBy?> UpdateUpdatedBy(MD_UpdatedBy mD_UpdateUpdatedBy)
         {
             var result = await _context.MD_UpdatedBys.FirstOrDefaultAsync(e => e.Id == mD_UpdateUpdatedBy.Id);
             if (result != null)
@@ -333,7 +334,7 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-        public async Task<MD_UploadFile> UpdateUploadFile(MD_UploadFile mD_UploadFile)
+        public async Task<MD_UploadFile?> UpdateUploadFile(MD_UploadFile mD_UploadFile)
         {
             var result = await _context.MD_UploadFiles.FirstOrDefaultAsync(e => e.Id == mD_UploadFile.Id);
             if (result != null)
