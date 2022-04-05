@@ -36,8 +36,8 @@ namespace NewBlazorProject.Server.InterFaces
         Task<MD_UpdatedBy?> GetUpdatedById(int? Id);
         Task<MD_Gender?> GetGenderById(int? Id);
         Task<MD_EducationLevel?> GetEducationLevelById(int? Id);
-        Task<IEnumerable<MD_District>> GetDistrictById();
-        Task<IEnumerable<MD_Tehsil>> GetTehsilById();
+        Task<MD_District> GetDistrictById(int? Id);
+        Task<MD_Tehsil?> GetTehsilById(int? Id);
 
 
 

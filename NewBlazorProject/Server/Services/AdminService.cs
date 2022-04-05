@@ -13,9 +13,6 @@ namespace NewBlazorProject.Server.Services
             _context = context;
         }
 
-        // commit added by saeed
-        // commit added by ali
-        // third commit
        async Task<IEnumerable<MD_Address>>  IAdminInterface.AddAddress(MD_Address mD_Address)
         {
             var result = await _context.MD_Addresses.AddAsync(mD_Address);
@@ -71,7 +68,21 @@ namespace NewBlazorProject.Server.Services
             await _context.SaveChangesAsync();
             return (IEnumerable<MD_UploadFile>)result.Entity;
         }
-       
+
+        public async Task<IEnumerable<MD_District>> AddDistrict(MD_District mD_District)
+        {
+            var result = await _context.MD_Districts.AddAsync(mD_District);
+            await _context.SaveChangesAsync();
+            return (IEnumerable<MD_District>)result.Entity;
+        }
+
+        public async Task<IEnumerable<MD_Tehsil>> AddTehsil(MD_Tehsil mD_Tehsil)
+        {
+            var result = await _context.MD_Tehsils.AddAsync(mD_Tehsil);
+            await _context.SaveChangesAsync();
+            return (IEnumerable<MD_Tehsil>)result.Entity;
+        }
+
 
 
         public async void DeleteAddress(int Id)
@@ -162,6 +173,26 @@ namespace NewBlazorProject.Server.Services
             }
         }
 
+        public async void DeleteDistrict(int Id)
+        {
+            var result = await _context.MD_Districts.FirstOrDefaultAsync(e => e.Id == Id);
+            if(result != null)
+            {
+                _context.MD_Districts.Remove(result);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async void DeleteTehsil(int Id)
+        {
+            var result = await _context.MD_Tehsils.FirstOrDefaultAsync(e => e.Id == Id);
+            if (result != null)
+            {
+                _context.MD_Tehsils.Remove(result);
+                await _context.SaveChangesAsync();
+            }
+        }
+
         public async Task<MD_Address?> GetAddressById(int? Id)
         {
             return await _context.MD_Addresses.FirstOrDefaultAsync(e => e.Id == Id);
@@ -190,6 +221,18 @@ namespace NewBlazorProject.Server.Services
         {
             return await _context.MD_Genders.FirstOrDefaultAsync(e => e.Id == Id);
         }
+
+        public async Task<MD_District?> GetDistrictById(int? Id)
+        {
+            return await _context.MD_Districts.FirstOrDefaultAsync(e => e.Id==Id);
+        }
+
+        public async Task<MD_Tehsil?> GetTehsilById(int? Id)
+        {
+            return await _context.MD_Tehsils.FirstOrDefaultAsync(e => e.Id == Id);
+        }
+
+
 
         public async Task<MD_UpdatedBy?> GetUpdatedById(int? Id)
         {
@@ -241,7 +284,19 @@ namespace NewBlazorProject.Server.Services
             return await _context.MD_UploadFiles.ToListAsync();
         }
 
-       
+
+        public async Task<IEnumerable<MD_District>> GetAllDistrict()
+        {
+            return await _context.MD_Districts.ToListAsync();
+        }
+
+        public async Task<IEnumerable<MD_Tehsil>> GetAllTehsil()
+        {
+            return await _context.MD_Tehsils.ToListAsync();
+        }
+
+
+
 
         public async Task<MD_Address?> UpdateAddress(MD_Address mD_Address)
         {
@@ -351,7 +406,32 @@ namespace NewBlazorProject.Server.Services
             return null;
         }
 
-       
+        public async Task<IEnumerable<MD_District>> UpdateDistrict(MD_District mD_District)
+        {
+            var result = await _context.MD_Districts.FirstOrDefaultAsync(e => e.Id == mD_District.Id);
+            if (result != null)
+            {
+                result.Name = mD_District.Name;
+                await _context.SaveChangesAsync();
+                return (IEnumerable<MD_District>)result;
+            }
+            return null;
+        }
+
+        public async Task<IEnumerable<MD_Tehsil>> UpdateTehsil(MD_Tehsil mD_Tehsil)
+        {
+            var result = await _context.MD_Tehsils.FirstOrDefaultAsync(e => e.Id == mD_Tehsil.Id);
+            if (result != null)
+            {
+                result.Name = mD_Tehsil.Name;
+                result.District = mD_Tehsil.District;
+                result.DistrictId = mD_Tehsil.DistrictId;
+
+                await _context.SaveChangesAsync();
+                return (IEnumerable<MD_Tehsil>)result;
+            }
+            return null;
+        }
 
        
     }
