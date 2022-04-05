@@ -12,6 +12,8 @@ namespace NewBlazorProject.Server.InterFaces
         Task<IEnumerable<MD_UploadFile>> AddUploadFile(MD_UploadFile mD_UploadFile);
         Task<IEnumerable<MD_UpdatedBy>> AddUpdatedBy(MD_UpdatedBy mD_UpdatedBy);
         Task<IEnumerable<MD_Gender>> AddGender(MD_Gender mD_Gender);
+        Task<IEnumerable<MD_District>> AddDistrict(MD_District mD_District);
+        Task<IEnumerable<MD_Tehsil>> AddTehsil(MD_Tehsil mD_Tehsil);
         Task<IEnumerable<MD_EducationLevel>> AddEducationLevel(MD_EducationLevel mD_EducationLevel);
 
         Task<IEnumerable<MD_Address>> GetAllAddress();
@@ -22,6 +24,8 @@ namespace NewBlazorProject.Server.InterFaces
         Task<IEnumerable<MD_UpdatedBy>> GetAllUpdatedBy();
         Task<IEnumerable<MD_Gender>> GetAllGender();
         Task<IEnumerable<MD_EducationLevel>> GetAllEducationLevel();
+        Task<IEnumerable<MD_District>> GetAllDistrict();
+        Task<IEnumerable<MD_Tehsil>> GetAllTehsil();
 
 
         Task<MD_Address?> GetAddressById(int? Id);
@@ -32,6 +36,8 @@ namespace NewBlazorProject.Server.InterFaces
         Task<MD_UpdatedBy?> GetUpdatedById(int? Id);
         Task<MD_Gender?> GetGenderById(int? Id);
         Task<MD_EducationLevel?> GetEducationLevelById(int? Id);
+        Task<IEnumerable<MD_District>> GetDistrictById();
+        Task<IEnumerable<MD_Tehsil>> GetTehsilById();
 
 
 
@@ -42,8 +48,10 @@ namespace NewBlazorProject.Server.InterFaces
         Task<MD_UploadFile> UpdateUploadFile(MD_UploadFile mD_Address);
         Task<MD_UpdatedBy> UpdateUpdatedBy(MD_UpdatedBy mD_Address);
         Task<MD_Gender> UpdateGender(MD_Gender mD_Address); 
-        Task<MD_EducationLevel> UpdateEducationLevel(MD_EducationLevel mD_Address); 
-        
+        Task<MD_EducationLevel> UpdateEducationLevel(MD_EducationLevel mD_Address);
+        Task<IEnumerable<MD_District>> UpdateDistrict(MD_District mD_District);
+        Task<IEnumerable<MD_Tehsil>> UpdateTehsil(MD_Tehsil mD_Tehsil);
+
 
         void DeleteAddress(int Id);
         void DeleteCreatedBy(int Id);
@@ -53,6 +61,9 @@ namespace NewBlazorProject.Server.InterFaces
         void DeleteUpdatedBy(int Id);
         void DeleteGender(int Id);
         void DeleteEducationLevel(int Id);
+        void DeleteDistrict(int Id);
+        void DeleteTehsil(int Id);
+
 
     }
 }
