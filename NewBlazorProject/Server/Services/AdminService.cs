@@ -303,6 +303,8 @@ namespace NewBlazorProject.Server.Services
             var result = await _context.MD_Addresses.FirstOrDefaultAsync(e => e.Id == mD_Address.Id);
             if (result != null)
             {
+                result.Name = mD_Address.Name;
+                result.postalCode = mD_Address.postalCode;
                 result.DistrictId = mD_Address.DistrictId;
                 result.TehsilId = mD_Address.TehsilId;
                 await _context.SaveChangesAsync();

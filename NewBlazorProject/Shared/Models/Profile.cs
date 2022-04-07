@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NewBlazorProject.Shared.Models
 {
-    internal class Profile
+    public class Profile
     {
+        [Key]
+        public int Id { get; set; }
         public int HRID { get; set; }
-        public  int CatagoryID { get; set; }
+        public int CatagoryID { get; set; }
         public string? PersonalNo { get; set; }
         public string? BeltNo { get; set; }
         public string? CNIC { get; set; }
@@ -50,11 +53,5 @@ namespace NewBlazorProject.Shared.Models
         public string? BioRightIndex { get; set; }
         public string? BioRighThumb { get; set; }
         public bool? IsActive { get; set; }
-
-
-
-
-
-
     }
 }

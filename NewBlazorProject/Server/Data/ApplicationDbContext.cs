@@ -8,6 +8,8 @@ using NewBlazorProject.Shared.Models;
 using NewBlazorProject.Shared.Models.HR_Data;
 using NewBlazorProject.Shared.Models.MasterData;
 
+
+
 namespace NewBlazorProject.Server.Data
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
@@ -40,5 +42,7 @@ namespace NewBlazorProject.Server.Data
         public DbSet<HR_Designation>hR_Designations { get; set; }
         public DbSet<HR_Posting> hR_Postings { get; set; }
         public DbSet<HR_Catagory> hR_Catagorys { get; set; }
+
+       public DbSet<Profile> Profiles { get; set; }
     }
 }
