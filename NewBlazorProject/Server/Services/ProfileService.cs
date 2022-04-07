@@ -8,6 +8,7 @@ namespace NewBlazorProject.Server.Services
 {
     public class ProfileService : IProfileInterface
     {
+        // profile services
         private readonly ApplicationDbContext _context;
         public ProfileService(ApplicationDbContext context)
         {
